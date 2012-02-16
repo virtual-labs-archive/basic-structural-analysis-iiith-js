@@ -43,8 +43,8 @@ $html = file_get_html('./content.html');
 
 $vlab_url = "http://virtual-labs.ac.in/"; 
 $css_js   = "http://deploy.virtual-labs.ac.in/labs/eerc04/"; 
-$lab_url  = "http://deploy.virtual-labs.ac.in/labs/eerc04/src/lab/index.php";
-$exp_url  = "http://deploy.virtual-labs.ac.in/labs/eerc04/src/lab/exp/index.php";
+$lab_url  = "http://deploy.virtual-labs.ac.in/labs/eerc04/index.php";
+$exp_url  = "http://deploy.virtual-labs.ac.in/labs/eerc04/exp/index.php";
 $base_url = $lab_url;
 
 include('./exp_template.php');
