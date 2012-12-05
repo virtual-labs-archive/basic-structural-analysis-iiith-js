@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp spec="1.0+" codebase="" href="">
     <information>
-        <title>Trusses</title>
+        <title>Trusses Demo</title>
 
-        <vendor> Trusses Demo</vendor>
+        <vendor>Trusses Demo</vendor>
     </information>
     <resources>
         <!-- Application Resources -->
@@ -11,12 +11,12 @@
               href="http://java.sun.com/products/autodl/j2se"
               max-heap-size="128m" />
 
-        <jar href="vlab2.jar" main="true" />
+        <jar href="work4.jar" main="true" />
 
     </resources>
     <applet-desc 
-         name="Trusses Demo Applet"
-         main-class="structuralanalysis.Trusses$MyApplet"
+         name="Trusses Applet"
+         main-class="com.vlab.geo.SpecificGravity$MyApplet"
          width="300"
          height="300">
      </applet-desc>
