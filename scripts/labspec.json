@@ -4,7 +4,7 @@
             "platform": {
                 "arch": "i386", 
                 "build_steps": {
-                    "build": [], 
+                    "build": ["make -C ../src"], 
                     "configure": [], 
                     "post_build": [], 
                     "pre_build": [], 
@@ -83,7 +83,7 @@
                 "Civil Engineering"
             ], 
             "id": "eerc04", 
-            "integration_level": 4, 
+            "integration_level": 6, 
             "name": "Basic Structural Analysis", 
             "server-side": true, 
             "status": "Released", 
@@ -93,17 +93,17 @@
             "platform": {
                 "arch": "i386", 
                 "hosting": "dedicated", 
-                "installer": [], 
+                "installer": ["sudo apt-get update","sudo apt-get install -y php5 apache2"], 
                 "lab_actions": {
                     "backup": [], 
                     "clean": [], 
-                    "init": [], 
+                    "init": ["cp -r ../build/* /var/www/","mv /var/www/index.html index.html.default"], 
                     "pause": [], 
                     "publish": [], 
                     "restore": [], 
                     "resume": [], 
-                    "shutdown": [], 
-                    "start": [], 
+                    "shutdown": ["service apache2 stop"], 
+                    "start": ["service apache2 start"], 
                     "stats": [], 
                     "stop": []
                 }, 
