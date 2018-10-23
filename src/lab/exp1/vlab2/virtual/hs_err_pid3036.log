@@ -1,0 +1,208 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x009c92ef, pid=3036, tid=1248
+#
+# JRE version: 6.0_14-b08
+# Java VM: Java HotSpot(TM) Client VM (14.0-b16 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# J  java.security.Provider.parseLegacyPut(Ljava/lang/String;Ljava/lang/String;)V
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02df5c00):  JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=1248, stack(0x03150000,0x031a0000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0xffffffff
+
+Registers:
+EAX=0xffffffff, EBX=0x00000015, ECX=0x22a195c0, EDX=0x00000020
+ESP=0x0319e890, EBP=0x0319e928, ESI=0x00000015, EDI=0x00000047
+EIP=0x009c92ef, EFLAGS=0x00010207
+
+Top of Stack: (sp=0x0319e890)
+0x0319e890:   00000000 00912da1 22a13e88 22a19538
+0x0319e8a0:   0319e8a0 2abb82d2 0319e8d0 2b507170
+0x0319e8b0:   00000000 2b507208 00000000 0319e8c8
+0x0319e8c0:   2b7e9058 22a13c28 00000000 22a13e88
+0x0319e8d0:   22a19538 22a19538 0319e8d8 22a19559
+0x0319e8e0:   0319e900 2b1e8c20 00000000 2b1e9270
+0x0319e8f0:   ffffffff 0319e900 0319e924 00912f07
+0x0319e900:   22a13e88 0319e904 0319e928 009abc82 
+
+Instructions: (pc=0x009c92ef)
+0x009c92df:   83 f8 ff 0f 85 90 01 00 00 83 44 24 4c 81 78 08
+0x009c92ef:   00 00 00 00 0f 86 03 05 00 00 8b 70 0c 8b ce e8 
+
+
+Stack: [0x03150000,0x031a0000],  sp=0x0319e890,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  java.security.Provider.parseLegacyPut(Ljava/lang/String;Ljava/lang/String;)V
+J  java.security.Provider.ensureLegacyParsed()V
+j  java.security.Provider.getService(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;+64
+j  sun.security.jca.GetInstance.getService(Ljava/lang/String;Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Provider$Service;+17
+j  sun.security.jca.GetInstance.getInstance(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Ljava/security/Provider;)Lsun/security/jca/GetInstance$Instance;+3
+j  java.security.Security.getImpl(Ljava/lang/String;Ljava/lang/String;Ljava/security/Provider;)[Ljava/lang/Object;+7
+j  java.security.MessageDigest.getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;+18
+j  sun.security.util.ManifestEntryVerifier.setEntry(Ljava/lang/String;Ljava/util/jar/JarEntry;)V+231
+j  java.util.jar.JarVerifier.beginEntry(Ljava/util/jar/JarEntry;Lsun/security/util/ManifestEntryVerifier;)V+190
+j  java.util.jar.JarVerifier$VerifierStream.<init>(Ljava/util/jar/Manifest;Ljava/util/jar/JarEntry;Ljava/io/InputStream;Ljava/util/jar/JarVerifier;)V+36
+j  java.util.jar.JarFile.getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;+85
+j  sun.misc.URLClassPath$JarLoader$2.getInputStream()Ljava/io/InputStream;+11
+j  sun.misc.Resource.cachedInputStream()Ljava/io/InputStream;+9
+j  sun.misc.Resource.getByteBuffer()Ljava/nio/ByteBuffer;+1
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+179
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecabc]
+V  [jvm.dll+0x173d61]
+V  [jvm.dll+0xecb3d]
+V  [jvm.dll+0x11bd8f]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  sun.misc.Launcher$ExtClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+7
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecabc]
+V  [jvm.dll+0x173d61]
+V  [jvm.dll+0xece6a]
+V  [jvm.dll+0xecf5a]
+V  [jvm.dll+0x1b5e3b]
+V  [jvm.dll+0x1b637e]
+V  [jvm.dll+0x1b6735]
+V  [jvm.dll+0x1b677b]
+V  [jvm.dll+0x9ea16]
+V  [jvm.dll+0x59a82]
+V  [jvm.dll+0xe90b4]
+j  javax.media.j3d.GraphicsConfigTemplate3D.getBestConfiguration([Ljava/awt/GraphicsConfiguration;)Ljava/awt/GraphicsConfiguration;+35
+j  java.awt.GraphicsDevice.getBestConfiguration(Ljava/awt/GraphicsConfigTemplate;)Ljava/awt/GraphicsConfiguration;+7
+j  structuralanalysis.RetainingWalls1.createUniverse(Ljava/awt/Container;)Ljavax/media/j3d/Canvas3D;+35
+j  structuralanalysis.RetainingWalls1.centerPanel(Ljava/awt/Container;)V+114
+j  structuralanalysis.RetainingWalls1.<init>(Ljava/awt/Container;)V+239
+j  structuralanalysis.RetainingWalls1$MyFrame.<init>()V+35
+j  structuralanalysis.RetainingWalls1$1.run()V+4
+j  java.awt.event.InvocationEvent.dispatch()V+47
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+26
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+204
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecabc]
+V  [jvm.dll+0x173d61]
+V  [jvm.dll+0xecc87]
+V  [jvm.dll+0xeccfd]
+V  [jvm.dll+0x115d60]
+V  [jvm.dll+0x1cfd44]
+V  [jvm.dll+0x1739dc]
+C  [msvcr71.dll+0x9565]
+C  [kernel32.dll+0xb713]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x003a6400 JavaThread "DestroyJavaVM" [_thread_blocked, id=2144, stack(0x008c0000,0x00910000)]
+=>0x02df5c00 JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=1248, stack(0x03150000,0x031a0000)]
+  0x02df4400 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3868, stack(0x030f0000,0x03140000)]
+  0x02df2c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=3092, stack(0x030a0000,0x030f0000)]
+  0x02e03c00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3220, stack(0x03050000,0x030a0000)]
+  0x02aa9000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3772, stack(0x02d20000,0x02d70000)]
+  0x02aa2800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2320, stack(0x02cd0000,0x02d20000)]
+  0x02aa1000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2336, stack(0x02c80000,0x02cd0000)]
+  0x02a9fc00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2376, stack(0x02c30000,0x02c80000)]
+  0x02a61400 JavaThread "Finalizer" daemon [_thread_blocked, id=2576, stack(0x02be0000,0x02c30000)]
+  0x02a5c800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2820, stack(0x02b90000,0x02be0000)]
+
+Other Threads:
+  0x02a5b000 VMThread [stack: 0x02b40000,0x02b90000] [id=3756]
+  0x02abc800 WatcherThread [stack: 0x02d70000,0x02dc0000] [id=3560]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 621K [0x22990000, 0x22a90000, 0x22e70000)
+  eden space 896K,  62% used [0x22990000, 0x22a1b660, 0x22a70000)
+  from space 64K, 100% used [0x22a80000, 0x22a90000, 0x22a90000)
+  to   space 64K,   0% used [0x22a70000, 0x22a70000, 0x22a80000)
+ tenured generation   total 4096K, used 1861K [0x22e70000, 0x23270000, 0x26990000)
+   the space 4096K,  45% used [0x22e70000, 0x230415e8, 0x23041600, 0x23270000)
+ compacting perm gen  total 12288K, used 1179K [0x26990000, 0x27590000, 0x2a990000)
+   the space 12288K,   9% used [0x26990000, 0x26ab6ef0, 0x26ab7000, 0x27590000)
+    ro space 8192K,  63% used [0x2a990000, 0x2aea96b0, 0x2aea9800, 0x2b190000)
+    rw space 12288K,  53% used [0x2b190000, 0x2b804b80, 0x2b804c00, 0x2bd90000)
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x7c900000 - 0x7c9af000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f6000 	C:\WINDOWS\system32\kernel32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x7e410000 - 0x7e4a1000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\WINDOWS\system32\GDI32.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d800000 - 0x6da8b000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x6d7b0000 - 0x6d7bc000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d330000 - 0x6d34f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d290000 - 0x6d298000 	C:\Program Files\Java\jre6\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d7f0000 - 0x6d7ff000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x6d000000 - 0x6d14a000 	C:\Program Files\Java\jre6\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\msvcrt.dll
+0x76390000 - 0x763ad000 	C:\WINDOWS\system32\IMM32.dll
+0x774e0000 - 0x7761d000 	C:\WINDOWS\system32\ole32.dll
+0x773d0000 - 0x774d3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x5ad70000 - 0x5ada8000 	C:\WINDOWS\system32\uxtheme.dll
+0x10000000 - 0x100ab000 	C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\cvasds1.dll
+0x7c9c0000 - 0x7d1d7000 	C:\WINDOWS\system32\SHELL32.dll
+0x771b0000 - 0x7725a000 	C:\WINDOWS\system32\WININET.dll
+0x77a80000 - 0x77b15000 	C:\WINDOWS\system32\CRYPT32.dll
+0x77b20000 - 0x77b32000 	C:\WINDOWS\system32\MSASN1.dll
+0x77120000 - 0x771ab000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x71ab0000 - 0x71ac7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6d230000 - 0x6d284000 	C:\Program Files\Java\jre6\bin\fontmanager.dll
+0x6d450000 - 0x6d474000 	C:\Program Files\Java\jre6\bin\jpeg.dll
+0x6d610000 - 0x6d623000 	C:\Program Files\Java\jre6\bin\net.dll
+0x6d630000 - 0x6d639000 	C:\Program Files\Java\jre6\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: structuralanalysis.RetainingWalls1
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:\Program Files\Ruby on Rails\bin;C:\Ruby\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\MATLAB\R2008a\bin;C:\Program Files\MATLAB\R2008a\bin\win32;C:\php;C:\Program Files\Java\jdk1.6.0_14\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 2 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 15 model 2 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 1039856k(268432k free), swap 2504852k(1805180k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.0-b16) for windows-x86 JRE (1.6.0_14-b08), built on May 21 2009 08:03:56 by "java_re" with MS VC++ 7.1
+
+time: Tue Mar 09 15:54:29 2010
+elapsed time: 12 seconds
+

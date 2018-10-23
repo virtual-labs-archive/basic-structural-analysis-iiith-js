@@ -1,0 +1,18 @@
+# MTL written from E:\My_Projects\3D_Hammer\Hammer.obj
+newmtl Steel
+Kd 0.8 0.8 0.8
+Ns 45.2548
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.5 0.5 0.5
+map_Bump E:\My_Projects\3D_Hammer\sand bump.JPG
+newmtl Wood
+Kd 0.44549 0.238431 0.213333
+Ns 512
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.0177255 0.00933333 0.00533333
+map_Kd E:\My_Projects\3D_Hammer\polished beech endgrain.JPG
+map_Bump E:\My_Projects\3D_Hammer\unfinished beech endgrain bump.JPG
